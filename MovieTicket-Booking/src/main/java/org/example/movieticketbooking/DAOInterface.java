@@ -1,7 +1,6 @@
 package org.example.movieticketbooking;
 
 import java.util.List;
-
 public interface DAOInterface<T> {
    public int insert(T entity);
 
