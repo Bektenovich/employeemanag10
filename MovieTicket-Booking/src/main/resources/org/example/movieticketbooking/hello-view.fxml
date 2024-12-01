@@ -33,4 +33,3 @@
 
     <Label fx:id="notificationLabel" style="-fx-text-fill: red; -fx-font-size: 14px; -fx-padding: 5;" />
 </VBox>
-
