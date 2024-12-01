@@ -6,9 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class HelloApplication extends Application {
+public class HelloApplication extends Application{
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) throws Exception{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/movieticketbooking/hello-view.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
@@ -16,8 +16,7 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
-    public static void main(String[] args) {
+    public static void main(String[] args){
         launch();
     }
 }
