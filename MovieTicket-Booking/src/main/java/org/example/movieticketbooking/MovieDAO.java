@@ -7,7 +7,7 @@ import java.util.List;
 public class MovieDAO implements DAOInterface<Movie> {
     private Connection conn;
 
-    public MovieDAO() {
+    public MovieDAO(){
         String url = "jdbc:postgresql://localhost:5432/MovieTicket-Booking"; // Adjust your DB name
         String username = "postgres";
         String password = "leyla@2006";
