@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookingDAO implements DAOInterface<Booking> {
+public class BookingDAO implements DAOInterface<Booking>{
     private Connection conn;
 
     public BookingDAO() {
