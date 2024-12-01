@@ -4,7 +4,7 @@ import java.sql.Date;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class Main{
     private static final MovieDAO movieDAO = new MovieDAO();
     private static final BookingDAO bookingDAO = new BookingDAO();
     private static final Scanner scanner = new Scanner(System.in);
