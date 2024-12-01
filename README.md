@@ -95,6 +95,158 @@ public class MovieBookingView extends Application {
 }
 ```
 
+### 3. **Graphical User Interface with User-Friendly Design**
+
+The **Graphical User Interface (GUI)** is designed to be:
+- **Intuitive**: Easy to navigate through the available movies, showtimes, and ticket booking process.
+- **Aesthetic**: Clean design with clear labels and buttons.
+- **Efficient**: Ensures that users can quickly make selections and complete the booking process without confusion.
+
+#### Key Features:
+- **Movie Selection Interface**: Allows users to easily select a movie.
+- **Booking Interface**: Provides input fields for selecting the number of tickets and completing the booking process.
+- **Clear Navigation**: Labels and buttons are intuitively placed for easy understanding.
+
+#### Example Code for GUI Design:
+```java
+public class MovieBookingView extends Application {
+    @Override
+    public void start(Stage primaryStage) {
+        // Create a button for booking tickets
+        Button bookButton = new Button("Book Ticket");
+        bookButton.setOnAction(event -> handleBooking());
+
+        // Table to display available movies
+        TableView<Movie> movieTable = new TableView<>();
+        movieTable.setItems(getMovies());  // Fetch movies from the model
+        
+        // Set up the layout for the UI
+        VBox layout = new VBox(movieTable, bookButton);
+        Scene scene = new Scene(layout);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    private void handleBooking() {
+        // Logic for booking the ticket
+    }
+}
+```
+### 4. **Responsive Design**
+
+The **Responsive Design** ensures the application adapts to various screen sizes:
+- **Flexible Layout**: GUI elements automatically resize or reorganize based on the screen size or window adjustments.
+- **Cross-Device Compatibility**: The interface remains usable on desktops, tablets, and mobile devices, ensuring a seamless experience across different devices.
+
+#### Key Features:
+- **Adapts to Different Screen Sizes**: The layout will adjust elements based on the user's device screen size.
+- **Mobile-Friendly Design**: When used on smaller devices like smartphones, the application should display with legible text and buttons without horizontal scrolling.
+
+#### Example Code for Responsive Layout:
+```java
+VBox layout = new VBox();
+layout.setSpacing(10);  // Adjustable spacing between elements
+
+HBox buttonsLayout = new HBox();
+buttonsLayout.setAlignment(Pos.CENTER);
+buttonsLayout.setSpacing(20);
+
+layout.getChildren().addAll(movieTable, buttonsLayout, bookButton);
+```
+### 5. **Message Notifications for Exceptions in Case of Wrong User Inputs**
+
+The system provides **error messages** when users input invalid data:
+- **Booking Error**: If a user tries to book more tickets than are available, an error message is displayed: *"Not enough seats available."*
+- **Input Validation**: If the user enters incorrect data (e.g., text where a number is expected), the system will display an error message.
+
+#### Key Features:
+- **Error Handling**: Whenever an error occurs, users are notified with a clear and helpful message.
+- **Exception Management**: Different types of errors (e.g., invalid input or booking failure) are captured and displayed with appropriate messages.
+
+#### Example of Exception Handling Code:
+```java
+private void handleBooking() {
+    try {
+        // Attempt to book the tickets
+        bookingService.bookTicket(movie, seats);
+    } catch (BookingException e) {
+        showError("Booking Error: " + e.getMessage());
+    }
+}
+
+private void showError(String message) {
+    Alert alert = new Alert(AlertType.ERROR);
+    alert.setTitle("Error");
+    alert.setHeaderText(null);
+    alert.setContentText(message);
+    alert.showAndWait();
+}
+```
+### 6. **Controller**
+
+The **Controller** acts as an intermediary between the **Model** and **View**:
+- **Handles User Input**: It processes user actions, such as selecting a movie or booking tickets.
+- **Interacts with the Model**: It updates the model based on the user's choices (e.g., booking a ticket).
+- **Updates the View**: After processing the input, it updates the view (e.g., updating available seats after a booking).
+
+#### Key Features:
+- **Event Handling**: The controller listens for user events (such as clicks on buttons) and invokes corresponding methods to update the model or view.
+- **User Interaction**: Ensures that user inputs (like booking a ticket) are passed to the model and that the view is updated with the results.
+- **Separation of Concerns**: Ensures the business logic (model) and UI logic (view) are separate, making the codebase cleaner and easier to maintain.
+
+#### Example of Controller Code:
+```java
+public class MovieBookingController {
+    private MovieBookingView view;
+    private MovieBookingModel model;
+
+    public MovieBookingController(MovieBookingView view, MovieBookingModel model) {
+        this.view = view;
+        this.model = model;
+    }
+
+    // Method to handle booking tickets
+    public void handleBooking(Movie movie, int seats) {
+        // Handle booking process by calling the model
+        model.bookMovie(movie, seats);
+        // Update the view with the new available seats
+        view.updateAvailableSeats(movie.getSessionTime());
+    }
+}
+```
+### 7. **Unit Testing**
+
+**Unit Testing** is essential to ensure that the model's methods work correctly:
+- Tests focus on validating the business logic, such as ticket price calculation, seat availability, etc.
+- Unit tests verify that the model behaves as expected under various conditions, and that the application continues to function properly as new features are added or changes are made.
+
+#### Key Features:
+- **Test Coverage**: Unit tests ensure the correctness of core functionality, such as calculating ticket prices, validating user input, and checking seat availability.
+- **Reliability**: Helps ensure that the application behaves as expected under various scenarios, improving its overall stability and reliability.
+- **Regression Testing**: Prevents the introduction of bugs when adding new features or making updates by ensuring that existing features still work correctly.
+
+#### Example of Unit Test:
+```java
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class BookingTest {
+    @Test
+    public void testCalculateTotalPrice() {
+        // Arrange: Create a movie object with a title and description
+        Movie movie = new Movie("Movie Title", "Description", LocalDateTime.now());
+        
+        // Create a booking with 3 tickets
+        Booking booking = new Booking(movie, 3);
+        
+        // The price per ticket is 10.0, so the expected total price is 30.0
+        double expectedPrice = 30.0;  
+        
+        // Act & Assert: Verify that the calculated price matches the expected price
+        assertEquals(expectedPrice, booking.calculateTotalPrice(), "Total price calculation is incorrect.");
+    }
+}
+```
+
 ## Team Members
 - Bekten uly Mukhammed (Tester)
 - Rahmatova Leyla (Developer)
