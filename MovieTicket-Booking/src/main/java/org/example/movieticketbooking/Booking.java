@@ -2,7 +2,7 @@ package org.example.movieticketbooking;
 
 import java.util.Date;
 
-public class Booking {
+public class Booking{
 
     private int id;
     private String userName;
