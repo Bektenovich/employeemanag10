@@ -23,9 +23,9 @@ The Movie Ticket Booking System allows users to select movies, book seats for se
 - Kokumova Aidana (Designer and Frontend Developer)
 
 ## Roles of Group Members
-- Bekten uly Mukhammed: Functional testing and interface validation.
+- Bekten uly Mukhammed: Functional testing,presentation and interface validation.
 - Rahmatova Leyla: Development of server-side logic and payment API integration.
-- Kokumova Aidana: Development of the user interface using JavaFX.
+- Kokumova Aidana: Development of the user interface using JavaFX and pgAdmin.
 
 ## Screenshots
 
