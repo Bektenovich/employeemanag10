@@ -2,13 +2,13 @@
 
 ## Project Description
 
-This is a Java-based Movie Ticket Booking System, designed using the **Model-View-Controller (MVC)** design pattern. The application allows users to book movie tickets, view available movies, and manage bookings. It provides a graphical user interface (GUI) built with **JavaFX** and interacts with a **PostgreSQL** database to store movie and booking information.
+This is a Java-based Movie Ticket Booking System,designed using the **Model-View-Controller (MVC)** design pattern.The application allows users to book movie tickets, view available movies,and manage bookings.It provides a graphical user interface (GUI) built with **JavaFX** and interacts with a **PostgreSQL** database to store movie and booking information.
 
 The system includes the following features:
-- Adding, updating, and deleting movies.
+- Adding,updating,and deleting movies.
 - Viewing all movies in the database.
 - Booking tickets for selected movies with date and seat information.
-- Managing bookings: adding, updating, and deleting bookings.
+- Managing bookings: adding,updating,and deleting bookings.
 - User-friendly interface with message notifications for incorrect inputs.
 
 ---
@@ -16,15 +16,15 @@ The system includes the following features:
 ## Project Requirements List
 
 - **Movie Management**:
-  1. Add a new movie with details such as title, genre, duration, release date, and rating.
+  1. Add a new movie with details such as title,genre,duration,release date,and rating.
   2. View a list of all available movies.
   3. Update movie details.
   4. Delete a movie from the database.
 
 - **Booking Management**:
-  5. Add a new booking (user name, movie title, seat count, showtime, booking date).
+  5. Add a new booking (user name,movie title,seat count,showtime,booking date).
   6. View all bookings.
-  7. Update booking details (user name, movie title, seat count, etc.).
+  7. Update booking details (user name,movie title,seat count,etc.).
   8. Delete a booking.
 
 - **Database Interaction**:
@@ -84,49 +84,29 @@ The UML Class Diagram outlines the structure of the Movie Ticket Booking System,
 
 ---
 
-## Weekly Meeting Documentation
-
-All weekly meeting summaries, including discussions, decisions, and action items, are documented in our **Google Docs** and can be found in the following link:  
-[Weekly Meeting Documentation](https://link-to-google-docs)
-
----
-
-## Commit History
-
-- Commits will be documented starting from more than 3 weeks before the submission date. You can find our commit history in our GitHub repository.
-
----
-
 ## Code Structure
 
 ### Model:
-- **Movie.java**: Represents the Movie entity, with attributes like title, genre, duration, release date, and rating.
-- **Booking.java**: Represents a Booking entity, containing information like user name, movie title, seat count, showtime, and booking date.
+- **Movie.java**: Represents the Movie entity,with attributes like title,genre,duration,release date,and rating.
+- **Booking.java**: Represents a Booking entity,containing information like user name,movie title,seat count,showtime,and booking date.
 
 ### View:
 - **HelloApplication.java**: The main entry point for the JavaFX application that initializes the GUI and launches the main stage.
-- **HelloController.java**: Handles user input, including booking tickets, validating user data, and updating the GUI with notifications.
+- **HelloController.java**: Handles user input,including booking tickets,validating user data,and updating the GUI with notifications.
 
 ### Controller:
-- **MovieDAO.java**: Provides data access methods for movie-related operations (CRUD - Create, Read, Update, Delete).
+- **MovieDAO.java**: Provides data access methods for movie-related operations (CRUD-Create,Read,Update,Delete).
 - **BookingDAO.java**: Handles database operations related to bookings.
 - **DAOInterface.java**: A generic interface that both `MovieDAO` and `BookingDAO` implement to handle CRUD operations.
 
 ### Database:
-- PostgreSQL is used as the database for storing movies and bookings. The system connects to the database through JDBC.
-
----
-
-## JAR Package
-
-The final JAR file for the application is available for download:  
-[Download JAR Package](path-to-your-jar-file)
+- PostgreSQL is used as the database for storing movies and bookings.The system connects to the database through JDBC.
 
 ---
 
 ## Unit Testing
 
-Unit tests for model methods are provided in the `test` directory. Tests ensure that the business logic for movies and bookings are functioning correctly, especially for CRUD operations. For testing, we used **JUnit**.
+Unit tests for model methods are provided in the `test` directory.Tests ensure that the business logic for movies and bookings are functioning correctly, especially for CRUD operations.For testing,we used **JUnit**.
 
 ---
 
@@ -134,4 +114,13 @@ Unit tests for model methods are provided in the `test` directory. Tests ensure 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/movie-ticket-booking.git
+   git clone [https://github.com/your-username/movie-ticket-booking.git](https://github.com/Bektenovich/projectOOP.git)
+   
+---
+
+## Presentation
+
+Presentation is located in our **Google Docs** and can be found in the following link:  
+[Presentation](https://link-to-google-docs)
+
+---
