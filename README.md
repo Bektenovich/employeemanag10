@@ -62,7 +62,7 @@ The system includes the following features:
 - **Rahmatova Leyla**: 
   - Focused on the database design and the development of the data access layers (DAO) for interacting with the PostgreSQL database. Ensured data integrity and efficient queries.
 
-- **Emily White**: 
+- **Bekten uly Mukhammed**: 
   - Responsible for testing the system, both manual and automated testing, and ensuring all use cases and edge cases are covered. Created a presentation.
 
 ---
